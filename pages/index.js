@@ -29,7 +29,7 @@ export default function Home({
       </Head>
       <div className="App">
         {account ? (
-          <Link href={`profile/${account}`}>Profile</Link>
+          <Link href={`profile/${account}`}>Your Profile</Link>
         ) : (
           <button onClick={connectWallet}>Connect Wallet</button>
         )}
