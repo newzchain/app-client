@@ -19,8 +19,7 @@ export default function Post({ setData, getContent }) {
   const currentPostId = router.query.postId;
 
   return (
-    <div>
-      hello {currentPostId}
+    <div className="mt-20">
       <p>Account: {account}</p>
       {isCreator ? (
         profileLoading ? (

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AppContext from "../context";
 import React from "react";
 import dynamic from "next/dynamic";
-
+import Router from "next/router";
 const DynamicCreatorsPage = dynamic(
   () => import("../components/CreatorsPage"),
   {
@@ -21,6 +21,12 @@ export default function CreatePost({
 }) {
   const { account, content, isCreator, profileLoading, createdPosts } =
     useContext(AppContext);
+
+  useEffect(() => {
+    if (!isCreator) {
+      Router.push(`/profile/${account}`);
+    }
+  }, [isCreator]);
 
   return (
     <div>

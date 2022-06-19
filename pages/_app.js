@@ -9,6 +9,8 @@ import {
   NEWSCHAIN_CONTRACT_ABI,
   NEWSCHAIN_CONTRACT_ADDRESS,
 } from "../constants/constants";
+import NavBar from "./../components/NavBar";
+import Footer from "../components/Footer";
 
 import { create as ipfsHttpClient } from "ipfs-http-client";
 function MyApp({ Component, pageProps }) {
@@ -349,6 +351,7 @@ function MyApp({ Component, pageProps }) {
         data,
       }}
     >
+      <NavBar />
       <Component
         {...pageProps}
         setProfileInfo={setProfileInfo}
@@ -364,6 +367,7 @@ function MyApp({ Component, pageProps }) {
         getContent={getContent}
         setData={setData}
       />
+      <Footer />
     </AppContext.Provider>
   );
 }
